@@ -1,0 +1,75 @@
+/* Estilo geral do container principal */
+.principal-container {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilo do título principal */
+.titulo-principal {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilo do carrossel */
+.carousel-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto; /* Ajusta a altura automaticamente para manter a proporção */
+    max-width: 70vw; /* Limita a largura máxima a 70% da largura da viewport */
+    max-height: 60vh; /* Limita a altura máxima a 60% da altura da viewport */
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.carousel-caption h3 {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 25px;
+}
+
+/* Estilo da descrição do site */
+.descricao-site {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    max-width: 90%;
+    margin: 20px auto;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Media query para telas pequenas */
+@media (max-width: 768px) {
+    .carousel img {
+        max-height: 40vh; /* Reduz a altura máxima para telas menores */
+    }
+    
+    .carousel-caption h3 {
+        font-size: 1rem; /* Ajusta o tamanho da fonte das legendas do carrossel para telas menores */
+    }
+
+    .descricao-site {
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte para telas menores */
+    }
+}

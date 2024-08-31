@@ -1,0 +1,94 @@
+.cadastro-evento-container {
+    width: 90%;
+    margin: auto;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.cadastro-evento {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.evento-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.evento-form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.evento-form-group label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.evento-form-group input[type="text"],
+.evento-form-group input[type="url"],
+.evento-form-group select,
+.evento-form-group textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.evento-form-group textarea {
+    height: 150px;
+}
+
+.evento-obrigatorio {
+    color: red;
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+}
+
+.evento-opcional {
+    color: gray;
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+}
+
+.cadastro-evento-container button[type="button"],
+.cadastro-evento-container button[type="submit"] {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    width: fit-content;
+}
+
+/* Ajuste para o botão "Adicionar mais um link" */
+.cadastro-evento-container button[type="button"] {
+    margin-top: 1.5rem; /* Aumenta a distância entre o botão e os conteúdos acima */
+}
+
+.cadastro-evento-container [type="button"]:hover,
+.cadastro-evento-container [type="submit"]:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+    .cadastro-evento-container {
+        width: 100%;
+    }
+
+    .evento-form-row {
+        flex-direction: column;
+    }
+
+    .evento-form-group input,
+    .evento-form-group textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

@@ -1,0 +1,22 @@
+/* Container principal do conteúdo da página */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o contêiner ocupe toda a altura da tela */
+    margin: 0; /* Remove margens adicionais */
+}
+
+/* Estilo do conteúdo da página */
+.page-content {
+    flex: 1; /* Faz com que o conteúdo ocupe todo o espaço restante */
+}
+
+/* Estilo do rodapé */
+.footer {
+    padding: 100px;
+    background-color: #343a40; /* Cor do fundo do rodapé */
+    color: #f8f9fa; /* Cor do texto do rodapé */
+    text-align: center;
+    margin-top: auto; /* Empurra o rodapé para o final do contêiner principal */
+    width: 100%; /* Garante que o rodapé ocupe toda a largura da página */
+}

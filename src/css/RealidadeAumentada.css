@@ -1,0 +1,73 @@
+/* RealidadeAumentada.css */
+
+/* Estilo do container da página */
+.realidade-aumentada-container {
+    padding: 10px;
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Estilo do título */
+.realidade-aumentada-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Estilo do separador (linha) */
+.realidade-aumentada-container hr {
+    margin: 20px 0;
+}
+
+/* Estilo da imagem */
+.imagem-realidade {
+    width: 100%;
+    max-width: 350px; /* Limita a largura máxima da imagem */
+    height: auto; /* Ajusta a altura automaticamente para manter a proporção */
+    margin-bottom: 30px;
+}
+
+/* Estilo do parágrafo */
+.realidade-aumentada-container p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Estilo do botão */
+.botao-acessar-camera {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.botao-acessar-camera:hover {
+    background-color: #0056b3;
+}
+
+/* Media query para dispositivos móveis */
+@media (max-width: 768px) {
+    /* Reduz o tamanho da fonte do título e do parágrafo */
+    
+    .realidade-aumentada-container {
+        padding: 10px;
+        max-width: 90%;
+    }
+
+    .realidade-aumentada-container h1 {
+        font-size: 2rem;
+    }
+
+    .realidade-aumentada-container p {
+        font-size: 1rem;
+    }
+
+    .botao-acessar-camera {
+        font-size: 1rem;
+    }
+}

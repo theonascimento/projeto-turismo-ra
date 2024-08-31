@@ -1,0 +1,139 @@
+/* Estilos específicos para o container do cadastro de ponto turístico */
+.cadastro-ponto-container {
+    width: 90%;
+    margin: auto;
+    max-width: 100%; /* Garante que o container não exceda a largura da tela */
+    overflow-x: hidden; /* Evita que o conteúdo vaze horizontalmente */
+}
+
+.cadastro-ponto-container form.cadastro-ponto {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cadastro-ponto-container .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.cadastro-ponto-container .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cadastro-ponto-container label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.cadastro-ponto-container input[type="text"],
+.cadastro-ponto-container input[type="tel"],
+.cadastro-ponto-container input[type="url"],
+.cadastro-ponto-container select,
+.cadastro-ponto-container textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Ajusta a largura para ocupar todo o espaço disponível sem vazamento */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+
+.cadastro-ponto-container input#nome {
+    width: 100%; /* Ajusta para a largura total */
+}
+
+/* Ajustes para o campo de Endereço */
+.cadastro-ponto-container input#endereco {
+    width: 100%; /* Ajusta o tamanho do campo de endereço */
+    margin-right: 0; /* Remove a margem direita excessiva */
+}
+
+/* Ajustes para os campos de Telefone */
+.cadastro-ponto-container input#telefone1,
+.cadastro-ponto-container input#telefone2 {
+    width: 100%; /* Ajusta o tamanho dos campos de telefone */
+}
+
+/* Ajustes para o campo de Categoria/Tipo */
+.cadastro-ponto-container select#categoria {
+    width: 100%; /* Ajusta o tamanho do campo de Categoria/Tipo */
+}
+
+.cadastro-ponto-container textarea {
+    height: 150px;
+}
+
+.cadastro-ponto-container .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cadastro-ponto-container .obrigatorio {
+    color: red;
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+}
+
+.cadastro-ponto-container .opcional {
+    color: gray;
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+}
+
+/* Ajuste para o botão "Adicionar mais um link" */
+.cadastro-ponto-container button[type="button"] {
+    margin-top: 1.5rem; /* Aumenta a distância entre o botão e os conteúdos acima */
+}
+
+.cadastro-ponto-container button[type="submit"],
+.cadastro-ponto-container button[type="button"] {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.cadastro-ponto-container button[type="submit"]:hover,
+.cadastro-ponto-container button[type="button"]:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+    .cadastro-ponto-container {
+        width: 100%;
+    }
+
+    .cadastro-ponto-container input#nome {
+        width: 95%;
+    }
+
+    .cadastro-ponto-container .form-row {
+        flex-direction: column;
+    }
+    
+    .cadastro-ponto-container input#endereco {
+        width: 100%;
+    }
+
+    .cadastro-ponto-container input[type="text"],
+    .cadastro-ponto-container input[type="tel"],
+    .cadastro-ponto-container input[type="url"],
+    .cadastro-ponto-container select,
+    .cadastro-ponto-container textarea {
+        width: 100%; /* Garante que todos os inputs ocupem a largura disponível */
+        box-sizing: border-box; /* Inclui padding e border na largura total */
+    }
+}
+
+/* Corrige vazamento geral */
+body {
+    overflow-x: hidden; /* Evita vazamento horizontal em toda a página */
+}
