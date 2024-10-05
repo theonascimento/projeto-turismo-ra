@@ -6,7 +6,7 @@ const RealidadeAumentada = () => {
         // Carrega o script do Google Maps API
         const loadGoogleMapsScript = () => {
             const script = document.createElement('script');
-            script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJ24Z0591gmYlaslFTh4KZnfGMoZPwS4&libraries=places`;
+            script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places`;
             script.async = true;
             script.defer = true;
             document.head.appendChild(script);
@@ -30,6 +30,7 @@ const RealidadeAumentada = () => {
             const map = new window.google.maps.Map(document.getElementById('map'), {
                 zoom: 15,
                 center: { lat: -20.945755, lng: -41.345579 }, // Centralizado em coordenadas específicas
+                gestureHandling: 'greedy', // Permitir movimentação com um dedo em dispositivos móveis
             });
 
             navigator.geolocation.getCurrentPosition((position) => {
@@ -64,20 +65,36 @@ const RealidadeAumentada = () => {
                             scaledSize: new window.google.maps.Size(45, 45),
                         },
                     });
+
+                    // Adicionando o InfoWindow para exibir informações
+                    const infoWindow = new window.google.maps.InfoWindow({
+                        content: `
+                            <div>
+                                <h3>${local.nome}</h3>
+                                <p>${local.descricao}</p>
+                                <img src="${local.imagem}" alt="${local.nome}" style="width:100px;" />
+                                <br/>
+                                <video src="${local.video}" controls style="width:100%;"></video>
+                            </div>
+                        `,
+                    });
+
+                    marker.addListener('click', () => {
+                        infoWindow.open(map, marker);
+                    });
                 }
             });
         };
 
         const calcularDistancia = (loc1, loc2) => {
-            const R = 6371;
+            const R = 6371; // Raio da Terra em km
             const dLat = (loc2.lat - loc1.lat) * (Math.PI / 180);
             const dLon = (loc2.lng - loc1.lng) * (Math.PI / 180);
             const a =
                 Math.sin(dLat / 2) * Math.sin(dLat / 2) +
                 Math.cos(loc1.lat * (Math.PI / 180)) *
-                    Math.cos(loc2.lat * (Math.PI / 180)) *
-                    Math.sin(dLon / 2) *
-                    Math.sin(dLon / 2);
+                Math.cos(loc2.lat * (Math.PI / 180)) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
             const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
             return R * c;
         };
@@ -87,7 +104,7 @@ const RealidadeAumentada = () => {
 
     return (
         <div className="realidade-aumentada-container">
-            <h1>Realidade Aumentada</h1>
+            <h1>Experiência RA</h1>
             <div id="map" style={{ height: '400px', width: '100%' }}></div>
         </div>
     );
