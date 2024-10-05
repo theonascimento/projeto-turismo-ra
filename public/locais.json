@@ -1,0 +1,103 @@
+[
+    {
+      "id": 1,
+      "nome": "Biblioteca Antiga e Museu de Antiguidades",
+      "descricao": "Uma biblioteca histórica com um museu de antiguidades.",
+      "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
+      "video": "videoteste.mp4",
+      "latitude": -20.950361,
+      "longitude": -41.341757
+    },
+  
+    {
+      "id": 2,
+      "nome": "Parque de Exposição de Muqui",
+      "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
+      "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
+      "video": "videoteste.mp4",
+      "latitude": -20.945755,
+      "longitude": -41.345579
+    },
+  
+    {
+      "id": 3,
+      "nome": "Casarão 0 exemplo",
+      "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
+      "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
+      "video": "videoteste.mp4",
+      "latitude": -20.947902,
+      "longitude": -41.340124
+    },
+  
+    {
+      "id": 4,
+      "nome": "Casarão 1 exemplo",
+      "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
+      "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
+      "video": "videoteste.mp4",
+      "latitude": -20.948253,
+      "longitude": -41.1340161
+    },
+  
+    {
+      "id": 5,
+      "nome": "Casarão 2 exemplo",
+      "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
+      "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
+      "video": "videoteste.mp4",
+      "latitude": -20.947697,
+      "longitude": -41.339687
+    },
+  
+    {
+      "id": 6,
+      "nome": "Casarão 3 exemplo",
+      "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
+      "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
+      "video": "videoteste.mp4",
+      "latitude": -20.802841,
+      "longitude": -41.154203
+    },
+  
+    {
+      "id": 7,
+      "nome": "Casarão 5 exemplo",
+      "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
+      "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
+      "video": "videoteste.mp4",
+      "latitude": -20.948016,
+      "longitude": -41.339570
+    },
+  
+    {
+      "id": 8,
+      "nome": "Casarão 6 exemplo",
+      "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
+      "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
+      "video": "videoteste.mp4",
+      "latitude": -20.948043,
+      "longitude": -41.34073
+    },
+  
+    {
+      "id": 9,
+      "nome": "Casarão 6 exemplo",
+      "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
+      "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
+      "video": "videoteste.mp4",
+      "latitude": -20.948484,
+      "longitude": -41.340454
+    },
+  
+    {
+      "id": 10,
+      "nome": "Casarão 6 exemplo",
+      "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
+      "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
+      "video": "videoteste.mp4",
+      "latitude": -20.948629,
+      "longitude": -41.340848
+    }
+  
+  ]
+    
