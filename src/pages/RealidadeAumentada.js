@@ -5,10 +5,9 @@ const RealidadeAumentada = () => {
     const [selectedLocal, setSelectedLocal] = useState(null); // Estado para controlar o local selecionado
 
     useEffect(() => {
-        // Carrega o script do Google Maps API
         const loadGoogleMapsScript = () => {
             const script = document.createElement('script');
-            script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJ24Z0591gmYlaslFTh4KZnfGMoZPwS4&libraries=places`;
+            script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJ24Z0591gmYlaslFTh4KZnfGMoZPwS4&libraries=places`; // Altere para sua chave de API
             script.async = true;
             script.defer = true;
             document.head.appendChild(script);
@@ -30,8 +29,8 @@ const RealidadeAumentada = () => {
         const initMap = (locaisCadastrados) => {
             const map = new window.google.maps.Map(document.getElementById('map'), {
                 zoom: 15,
-                center: { lat: -20.945755, lng: -41.345579 }, // Centralizado em coordenadas específicas
-                gestureHandling: 'greedy', // Permitir movimentação com um dedo em dispositivos móveis
+                center: { lat: -20.945755, lng: -41.345579 },
+                gestureHandling: 'greedy',
             });
 
             navigator.geolocation.getCurrentPosition((position) => {
@@ -56,7 +55,7 @@ const RealidadeAumentada = () => {
                 const localPosicao = { lat: local.latitude, lng: local.longitude };
                 const distancia = calcularDistancia(userLocation, localPosicao);
         
-                if (distancia < 0.1) {
+                if (distancia < 0.1) { // Menos de 100 metros
                     const marker = new window.google.maps.Marker({
                         position: localPosicao,
                         map: map,
@@ -85,13 +84,12 @@ const RealidadeAumentada = () => {
                 Math.cos(loc2.lat * (Math.PI / 180)) *
                 Math.sin(dLon / 2) * Math.sin(dLon / 2);
             const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            return R * c;
+            return R * c; // Retorna a distância em km
         };
 
         loadGoogleMapsScript(); // Carrega o Google Maps API
     }, []);
 
-    // Função para fechar o modal
     const closeModal = () => {
         setSelectedLocal(null);
     };
@@ -106,12 +104,16 @@ const RealidadeAumentada = () => {
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                         <h3>{selectedLocal.nome}</h3>
                         <p>{selectedLocal.descricao}</p>
-                        <div className="image-carousel">
-                            {selectedLocal.imagens.map(img => (
-                                <img src={img} alt={selectedLocal.nome} key={img} />
-                            ))}
-                        </div>
-                        <video src={selectedLocal.video} controls className="info-video"></video>
+                        {selectedLocal.imagens && selectedLocal.imagens.length > 0 && (
+                            <div className="image-carousel">
+                                {selectedLocal.imagens.map((img) => (
+                                    <img src={img} alt={selectedLocal.nome} key={img} />
+                                ))}
+                            </div>
+                        )}
+                        {selectedLocal.video && (
+                            <video src={selectedLocal.video} controls className="info-video"></video>
+                        )}
                         <button className="close-button" onClick={closeModal}>Fechar</button>
                     </div>
                 </div>
