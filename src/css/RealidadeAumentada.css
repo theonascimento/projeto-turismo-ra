@@ -32,7 +32,7 @@
 }
 
 .image-carousel img {
-    width: 150px; /* Ajusta o tamanho das imagens */
+    width: 200px; /* Ajusta o tamanho das imagens */
     height: auto;
     border-radius: 5px;
     object-fit: cover; /* Mantém a proporção das imagens */
@@ -64,7 +64,7 @@
     }
 
     .image-carousel img {
-        width: 120px; /* Reduz o tamanho das imagens em dispositivos menores */
+        width: 180px; /* Reduz o tamanho das imagens em dispositivos menores */
     }
 
     .info-video {

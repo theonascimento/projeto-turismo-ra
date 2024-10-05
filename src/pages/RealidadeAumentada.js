@@ -26,25 +26,36 @@ const RealidadeAumentada = () => {
 
         const initMap = (locaisCadastrados) => {
             const map = new window.google.maps.Map(document.getElementById('map'), {
-                zoom: 15,
-                center: { lat: -20.945755, lng: -41.345579 },
-                gestureHandling: 'greedy',
+                zoom: 18, // Aumenta o nível de zoom inicial
+                center: { lat: -20.945755, lng: -41.345579 }, // Centralizado em coordenadas específicas
+                gestureHandling: 'greedy', // Permitir movimentação com um dedo em dispositivos móveis
             });
-
-            navigator.geolocation.getCurrentPosition((position) => {
+        
+            const userMarker = new window.google.maps.Marker({
+                map: map,
+                title: 'Você está aqui',
+            });
+        
+            // Monitorar a posição do usuário
+            navigator.geolocation.watchPosition((position) => {
                 const userLocation = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude,
                 };
+        
+                // Atualizar o centro do mapa para a localização do usuário
                 map.setCenter(userLocation);
-
-                new window.google.maps.Marker({
-                    position: userLocation,
-                    map: map,
-                    title: 'Você está aqui',
-                });
-
+                
+                // Atualizar a posição do marcador
+                userMarker.setPosition(userLocation);
+        
                 verificarProximidade(userLocation, map, locaisCadastrados);
+            }, (error) => {
+                console.error('Erro ao obter a localização:', error);
+            }, {
+                enableHighAccuracy: true, // Habilita a precisão alta
+                maximumAge: 0, // Não usa uma posição armazenada
+                timeout: 5000 // Tempo limite para obter a posição
             });
         };
 
