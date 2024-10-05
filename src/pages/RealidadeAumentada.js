@@ -54,7 +54,7 @@ const RealidadeAumentada = () => {
             locaisCadastrados.forEach((local) => {
                 const localPosicao = { lat: local.latitude, lng: local.longitude };
                 const distancia = calcularDistancia(userLocation, localPosicao);
-        
+
                 if (distancia < 0.1) {
                     const marker = new window.google.maps.Marker({
                         position: localPosicao,
@@ -65,24 +65,22 @@ const RealidadeAumentada = () => {
                             scaledSize: new window.google.maps.Size(45, 45),
                         },
                     });
-        
-                    const imagens = local.imagens.map((img) => 
-                        `<img src="${img}" alt="${local.nome}" />`
-                    ).join('');
-        
-                    const infoWindow = new window.google.maps.InfoWindow({
-                        content: `
-                            <div class="info-window">
-                                <h3>${local.nome}</h3>
-                                <p>${local.descricao}</p>
-                                <div class="img-container">
-                                    ${imagens}
-                                </div>
-                                <video src="${local.video}" controls></video>
+
+                    const infoWindowContent = `
+                        <div class="info-window-content">
+                            <h3>${local.nome}</h3>
+                            <p>${local.descricao}</p>
+                            <div class="image-carousel">
+                                ${local.imagens.map(img => `<img src="${img}" alt="${local.nome}" class="info-image" />`).join('')}
                             </div>
-                        `,
+                            ${local.video ? `<br/><video src="${local.video}" controls class="info-video"></video>` : ''}
+                        </div>
+                    `;
+
+                    const infoWindow = new window.google.maps.InfoWindow({
+                        content: infoWindowContent,
                     });
-        
+
                     marker.addListener('click', () => {
                         infoWindow.open(map, marker);
                     });

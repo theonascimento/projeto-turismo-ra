@@ -4,10 +4,14 @@
 }
 
 #map {
-    height: 50vh;
+    height: 50vh; /* Ajusta a altura para metade da tela em dispositivos móveis */
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 600px; /* Define um limite máximo para o mapa em telas maiores */
+    margin: 0 auto; /* Centraliza o mapa */
+}
+
+.info-window-content {
+    max-width: 100%; /* Certifica-se de que o conteúdo ocupe a largura total */
 }
 
 .info-window h3 {
@@ -20,31 +24,46 @@
     margin-bottom: 10px;
 }
 
-.img-container {
+.image-carousel {
     display: flex;
-    overflow-x: scroll;
-    gap: 10px;
+    overflow-x: auto; /* Permite a rolagem horizontal para imagens */
+    gap: 10px; /* Espaçamento entre as imagens */
+    padding: 10px 0; /* Adiciona espaçamento superior e inferior */
 }
 
-.img-container img {
-    width: 100px;
+.image-carousel img {
+    width: 150px; /* Ajusta o tamanho das imagens */
     height: auto;
     border-radius: 5px;
+    object-fit: cover; /* Mantém a proporção das imagens */
 }
 
-video {
+.info-video {
     width: 100%;
+    max-width: 100%; /* Faz o vídeo ocupar a largura máxima */
     margin-top: 10px;
+    border-radius: 5px;
 }
 
 @media (max-width: 600px) {
     #map {
-        height: 60vh;
+        height: 60vh; /* Aumenta a altura do mapa em telas menores */
     }
+
     .info-window h3 {
         font-size: 1.2em;
     }
+
     .info-window p {
         font-size: 1em;
+    }
+
+    .image-carousel img {
+        width: 120px; /* Reduz o tamanho das imagens em dispositivos menores */
+    }
+
+    .info-video {
+        width: 100%;
+        height: auto; /* Ajusta o vídeo para manter a proporção em telas menores */
     }
 }
