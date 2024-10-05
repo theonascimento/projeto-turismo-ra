@@ -54,7 +54,7 @@ const RealidadeAumentada = () => {
             locaisCadastrados.forEach((local) => {
                 const localPosicao = { lat: local.latitude, lng: local.longitude };
                 const distancia = calcularDistancia(userLocation, localPosicao);
-
+        
                 if (distancia < 0.1) {
                     const marker = new window.google.maps.Marker({
                         position: localPosicao,
@@ -65,20 +65,24 @@ const RealidadeAumentada = () => {
                             scaledSize: new window.google.maps.Size(45, 45),
                         },
                     });
-
-                    // Adicionando o InfoWindow para exibir informações
+        
+                    const imagens = local.imagens.map((img) => 
+                        `<img src="${img}" alt="${local.nome}" />`
+                    ).join('');
+        
                     const infoWindow = new window.google.maps.InfoWindow({
                         content: `
-                            <div>
+                            <div class="info-window">
                                 <h3>${local.nome}</h3>
                                 <p>${local.descricao}</p>
-                                <img src="${local.imagem}" alt="${local.nome}" style="width:100px;" />
-                                <br/>
-                                <video src="${local.video}" controls style="width:100%;"></video>
+                                <div class="img-container">
+                                    ${imagens}
+                                </div>
+                                <video src="${local.video}" controls></video>
                             </div>
                         `,
                     });
-
+        
                     marker.addListener('click', () => {
                         infoWindow.open(map, marker);
                     });

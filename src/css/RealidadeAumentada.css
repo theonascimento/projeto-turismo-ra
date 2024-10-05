@@ -4,14 +4,47 @@
 }
 
 #map {
-    height: 50vh; /* Ajusta a altura para metade da tela em dispositivos móveis */
+    height: 50vh;
     width: 100%;
-    max-width: 600px; /* Define um limite máximo para o mapa em telas maiores */
-    margin: 0 auto; /* Centraliza o mapa */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.info-window h3 {
+    font-size: 1.5em; /* Aumenta o tamanho do título */
+    margin-bottom: 10px;
+}
+
+.info-window p {
+    font-size: 1.2em; /* Aumenta o tamanho da descrição */
+    margin-bottom: 10px;
+}
+
+.img-container {
+    display: flex;
+    overflow-x: scroll;
+    gap: 10px;
+}
+
+.img-container img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+video {
+    width: 100%;
+    margin-top: 10px;
 }
 
 @media (max-width: 600px) {
     #map {
-        height: 60vh; /* Aumenta a altura do mapa em telas menores */
+        height: 60vh;
+    }
+    .info-window h3 {
+        font-size: 1.2em;
+    }
+    .info-window p {
+        font-size: 1em;
     }
 }

@@ -1,12 +1,15 @@
 [
     {
-      "id": 1,
-      "nome": "Biblioteca Antiga e Museu de Antiguidades",
-      "descricao": "Uma biblioteca histórica com um museu de antiguidades.",
-      "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
-      "video": "videoteste.mp4",
-      "latitude": -20.950361,
-      "longitude": -41.341757
+        "id": 1,
+        "nome": "Biblioteca Antiga e Museu de Antiguidades",
+        "descricao": "Uma biblioteca histórica com um museu de antiguidades.",
+        "imagens": [
+            "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
+            "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg"
+        ],
+        "video": "videoteste.mp4",
+        "latitude": -20.950361,
+        "longitude": -41.341757
     },
   
     {
