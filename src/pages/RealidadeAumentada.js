@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/RealidadeAumentada.css';
 
 const RealidadeAumentada = () => {
+    const [selectedLocal, setSelectedLocal] = useState(null); // Estado para controlar o local selecionado
+
     useEffect(() => {
         // Carrega o script do Google Maps API
         const loadGoogleMapsScript = () => {
@@ -11,7 +13,6 @@ const RealidadeAumentada = () => {
             script.defer = true;
             document.head.appendChild(script);
             script.onload = () => {
-                // Quando o script estiver carregado, inicialize o mapa
                 carregarLocais();
             };
         };
@@ -54,7 +55,7 @@ const RealidadeAumentada = () => {
             locaisCadastrados.forEach((local) => {
                 const localPosicao = { lat: local.latitude, lng: local.longitude };
                 const distancia = calcularDistancia(userLocation, localPosicao);
-
+        
                 if (distancia < 0.1) {
                     const marker = new window.google.maps.Marker({
                         position: localPosicao,
@@ -66,23 +67,9 @@ const RealidadeAumentada = () => {
                         },
                     });
 
-                    const infoWindowContent = `
-                        <div class="info-window-content">
-                            <h3>${local.nome}</h3>
-                            <p>${local.descricao}</p>
-                            <div class="image-carousel">
-                                ${local.imagens.map(img => `<img src="${img}" alt="${local.nome}" class="info-image" />`).join('')}
-                            </div>
-                            ${local.video ? `<br/><video src="${local.video}" controls class="info-video"></video>` : ''}
-                        </div>
-                    `;
-
-                    const infoWindow = new window.google.maps.InfoWindow({
-                        content: infoWindowContent,
-                    });
-
+                    // Adiciona o listener para abrir o modal ao clicar na marcação
                     marker.addListener('click', () => {
-                        infoWindow.open(map, marker);
+                        setSelectedLocal(local); // Atualiza o estado com o local selecionado
                     });
                 }
             });
@@ -104,10 +91,31 @@ const RealidadeAumentada = () => {
         loadGoogleMapsScript(); // Carrega o Google Maps API
     }, []);
 
+    // Função para fechar o modal
+    const closeModal = () => {
+        setSelectedLocal(null);
+    };
+
     return (
         <div className="realidade-aumentada-container">
             <h1>Experiência RA</h1>
             <div id="map" style={{ height: '400px', width: '100%' }}></div>
+
+            {selectedLocal && (
+                <div className="modal" onClick={closeModal}>
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <h3>{selectedLocal.nome}</h3>
+                        <p>{selectedLocal.descricao}</p>
+                        <div className="image-carousel">
+                            {selectedLocal.imagens.map(img => (
+                                <img src={img} alt={selectedLocal.nome} key={img} />
+                            ))}
+                        </div>
+                        <video src={selectedLocal.video} controls className="info-video"></video>
+                        <button className="close-button" onClick={closeModal}>Fechar</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
