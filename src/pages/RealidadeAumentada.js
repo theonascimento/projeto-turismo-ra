@@ -36,6 +36,17 @@ const RealidadeAumentada = () => {
                 title: 'Você está aqui',
             });
         
+            let isUserInteracting = false;
+        
+            // Evento que detecta quando o usuário está interagindo com o mapa
+            map.addListener('dragstart', () => {
+                isUserInteracting = true;
+            });
+        
+            map.addListener('dragend', () => {
+                isUserInteracting = false;
+            });
+        
             // Monitorar a posição do usuário
             navigator.geolocation.watchPosition((position) => {
                 const userLocation = {
@@ -43,11 +54,13 @@ const RealidadeAumentada = () => {
                     lng: position.coords.longitude,
                 };
         
-                // Atualizar o centro do mapa para a localização do usuário
-                map.setCenter(userLocation);
-                
-                // Atualizar a posição do marcador
+                // Atualiza o marcador do usuário
                 userMarker.setPosition(userLocation);
+        
+                // Apenas centraliza o mapa se o usuário não estiver interagindo
+                if (!isUserInteracting) {
+                    map.setCenter(userLocation);
+                }
         
                 verificarProximidade(userLocation, map, locaisCadastrados);
             }, (error) => {
