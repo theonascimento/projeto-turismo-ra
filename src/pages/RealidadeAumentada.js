@@ -6,7 +6,7 @@ const RealidadeAumentada = () => {
         // Carrega o script do Google Maps API
         const loadGoogleMapsScript = () => {
             const script = document.createElement('script');
-            script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places`;
+            script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJ24Z0591gmYlaslFTh4KZnfGMoZPwS4&libraries=places`;
             script.async = true;
             script.defer = true;
             document.head.appendChild(script);
