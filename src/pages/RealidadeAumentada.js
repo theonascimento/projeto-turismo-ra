@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import '../css/RealidadeAumentada.css';
 
 const RealidadeAumentada = () => {
-    const [selectedLocal, setSelectedLocal] = useState(null); // Estado para controlar o local selecionado
-
     useEffect(() => {
+        // Carrega o script do Google Maps API
         const loadGoogleMapsScript = () => {
             const script = document.createElement('script');
-            script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJ24Z0591gmYlaslFTh4KZnfGMoZPwS4&libraries=places`; // Altere para sua chave de API
+            script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJ24Z0591gmYlaslFTh4KZnfGMoZPwS4&libraries=places`;
             script.async = true;
             script.defer = true;
             document.head.appendChild(script);
             script.onload = () => {
+                // Quando o script estiver carregado, inicialize o mapa
                 carregarLocais();
             };
         };
@@ -29,8 +29,8 @@ const RealidadeAumentada = () => {
         const initMap = (locaisCadastrados) => {
             const map = new window.google.maps.Map(document.getElementById('map'), {
                 zoom: 15,
-                center: { lat: -20.945755, lng: -41.345579 },
-                gestureHandling: 'greedy',
+                center: { lat: -20.945755, lng: -41.345579 }, // Centralizado em coordenadas específicas
+                gestureHandling: 'greedy', // Permitir movimentação com um dedo em dispositivos móveis
             });
 
             navigator.geolocation.getCurrentPosition((position) => {
@@ -54,8 +54,8 @@ const RealidadeAumentada = () => {
             locaisCadastrados.forEach((local) => {
                 const localPosicao = { lat: local.latitude, lng: local.longitude };
                 const distancia = calcularDistancia(userLocation, localPosicao);
-        
-                if (distancia < 0.1) { // Menos de 100 metros
+
+                if (distancia < 0.1) {
                     const marker = new window.google.maps.Marker({
                         position: localPosicao,
                         map: map,
@@ -66,9 +66,23 @@ const RealidadeAumentada = () => {
                         },
                     });
 
-                    // Adiciona o listener para abrir o modal ao clicar na marcação
+                    const infoWindowContent = `
+                        <div class="info-window-content">
+                            <h3>${local.nome}</h3>
+                            <p>${local.descricao}</p>
+                            <div class="image-carousel">
+                                ${local.imagens.map(img => `<img src="${img}" alt="${local.nome}" class="info-image" />`).join('')}
+                            </div>
+                            ${local.video ? `<br/><video src="${local.video}" controls class="info-video"></video>` : ''}
+                        </div>
+                    `;
+
+                    const infoWindow = new window.google.maps.InfoWindow({
+                        content: infoWindowContent,
+                    });
+
                     marker.addListener('click', () => {
-                        setSelectedLocal(local); // Atualiza o estado com o local selecionado
+                        infoWindow.open(map, marker);
                     });
                 }
             });
@@ -84,40 +98,16 @@ const RealidadeAumentada = () => {
                 Math.cos(loc2.lat * (Math.PI / 180)) *
                 Math.sin(dLon / 2) * Math.sin(dLon / 2);
             const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            return R * c; // Retorna a distância em km
+            return R * c;
         };
 
         loadGoogleMapsScript(); // Carrega o Google Maps API
     }, []);
 
-    const closeModal = () => {
-        setSelectedLocal(null);
-    };
-
     return (
         <div className="realidade-aumentada-container">
             <h1>Experiência RA</h1>
             <div id="map" style={{ height: '400px', width: '100%' }}></div>
-
-            {selectedLocal && (
-                <div className="modal" onClick={closeModal}>
-                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                        <h3>{selectedLocal.nome}</h3>
-                        <p>{selectedLocal.descricao}</p>
-                        {selectedLocal.imagens && selectedLocal.imagens.length > 0 && (
-                            <div className="image-carousel">
-                                {selectedLocal.imagens.map((img) => (
-                                    <img src={img} alt={selectedLocal.nome} key={img} />
-                                ))}
-                            </div>
-                        )}
-                        {selectedLocal.video && (
-                            <video src={selectedLocal.video} controls className="info-video"></video>
-                        )}
-                        <button className="close-button" onClick={closeModal}>Fechar</button>
-                    </div>
-                </div>
-            )}
         </div>
     );
 };

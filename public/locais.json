@@ -100,6 +100,19 @@
       "video": "videoteste.mp4",
       "latitude": -20.948629,
       "longitude": -41.340848
+    },
+    
+    {
+        "id": 11,
+        "nome": "Biblioteca Antiga e Museu de Antiguidades",
+        "descricao": "Uma biblioteca histórica com um museu de antiguidades.",
+        "imagens": [
+            "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
+            "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg"
+        ],
+        "video": "videoteste.mp4",
+        "latitude": -14.23500,
+        "longitude": -51.92528
     }
   
   ]

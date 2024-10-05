@@ -10,39 +10,6 @@
     margin: 0 auto; /* Centraliza o mapa */
 }
 
-/* Estilo para o modal */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Faz com que o modal apareça sobre o mapa */
-}
-
-.modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 90%; /* Permite que o modal ocupe a maior parte da tela */
-    max-height: 90%; /* Limita a altura do modal para que não exceda a tela */
-    overflow-y: auto; /* Adiciona rolagem se o conteúdo for muito longo */
-}
-
-.close-button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
 .info-window-content {
     max-width: 100%; /* Certifica-se de que o conteúdo ocupe a largura total */
 }
