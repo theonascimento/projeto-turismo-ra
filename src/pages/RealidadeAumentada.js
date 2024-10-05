@@ -32,20 +32,13 @@ const RealidadeAumentada = () => {
             });
         
             const userMarker = new window.google.maps.Marker({
+                position: { lat: -20.945755, lng: -41.345579 }, // Inicializa o marcador na posição inicial
                 map: map,
                 title: 'Você está aqui',
             });
         
-            let isUserInteracting = false;
-        
-            // Evento que detecta quando o usuário está interagindo com o mapa
-            map.addListener('dragstart', () => {
-                isUserInteracting = true;
-            });
-        
-            map.addListener('dragend', () => {
-                isUserInteracting = false;
-            });
+            let isUserMoving = false; // Para rastrear se o usuário está se movendo
+            let timeoutId; // Para armazenar o ID do temporizador
         
             // Monitorar a posição do usuário
             navigator.geolocation.watchPosition((position) => {
@@ -54,12 +47,21 @@ const RealidadeAumentada = () => {
                     lng: position.coords.longitude,
                 };
         
-                // Atualiza o marcador do usuário
+                // Atualiza a posição do marcador do usuário
                 userMarker.setPosition(userLocation);
         
-                // Apenas centraliza o mapa se o usuário não estiver interagindo
-                if (!isUserInteracting) {
-                    map.setCenter(userLocation);
+                // Se o usuário se mover, limpa o temporizador anterior e inicia um novo
+                if (!isUserMoving) {
+                    isUserMoving = true; // Indica que o usuário está se movendo
+                    if (timeoutId) {
+                        clearTimeout(timeoutId); // Limpa o temporizador anterior
+                    }
+        
+                    // Programa a centralização do mapa após 20 segundos
+                    timeoutId = setTimeout(() => {
+                        map.setCenter(userLocation); // Centraliza o mapa na nova localização do usuário
+                        isUserMoving = false; // Reseta o estado de movimento do usuário
+                    }, 20000); // 20000 milissegundos = 20 segundos
                 }
         
                 verificarProximidade(userLocation, map, locaisCadastrados);
