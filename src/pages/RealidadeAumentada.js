@@ -3,7 +3,6 @@ import '../css/RealidadeAumentada.css';
 
 const RealidadeAumentada = () => {
     useEffect(() => {
-        // Carrega o script do Google Maps API
         const loadGoogleMapsScript = () => {
             const script = document.createElement('script');
             script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJ24Z0591gmYlaslFTh4KZnfGMoZPwS4&libraries=places`;
@@ -11,7 +10,6 @@ const RealidadeAumentada = () => {
             script.defer = true;
             document.head.appendChild(script);
             script.onload = () => {
-                // Quando o script estiver carregado, inicialize o mapa
                 carregarLocais();
             };
         };
@@ -29,8 +27,8 @@ const RealidadeAumentada = () => {
         const initMap = (locaisCadastrados) => {
             const map = new window.google.maps.Map(document.getElementById('map'), {
                 zoom: 15,
-                center: { lat: -20.945755, lng: -41.345579 }, // Centralizado em coordenadas específicas
-                gestureHandling: 'greedy', // Permitir movimentação com um dedo em dispositivos móveis
+                center: { lat: -20.945755, lng: -41.345579 },
+                gestureHandling: 'greedy',
             });
 
             navigator.geolocation.getCurrentPosition((position) => {
@@ -74,6 +72,7 @@ const RealidadeAumentada = () => {
                                 ${local.imagens.map(img => `<img src="${img}" alt="${local.nome}" class="info-image" />`).join('')}
                             </div>
                             ${local.video ? `<br/><video src="${local.video}" controls class="info-video"></video>` : ''}
+                            ${local.audio ? `<br/><audio src="${local.audio}" controls class="info-audio"></audio>` : ''}  <!-- Adiciona o elemento de áudio -->
                         </div>
                     `;
 

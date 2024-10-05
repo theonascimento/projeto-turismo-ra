@@ -1,13 +1,15 @@
 [
     {
         "id": 1,
-        "nome": "Biblioteca Antiga e Museu de Antiguidades",
-        "descricao": "Uma biblioteca histórica com um museu de antiguidades.",
+        "nome": "Praça Geraldo Vianna",
+        "descricao": "Praça de Muqui - ES localizada no centro da cidade, área de lazer e onde ocorre festividades do municipio.",
         "imagens": [
-            "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
-            "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg"
+        "/images/praca01.jpg",
+        "/images/praca02.jpg",
+        "/images/praca03.jpg"
         ],
         "video": "videoteste.mp4",
+        "audio": "audio01.mp3",
         "latitude": -20.950361,
         "longitude": -41.341757
     },
@@ -18,6 +20,7 @@
       "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
       "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
       "video": "videoteste.mp4",
+      "audio": "audio01.mp3",
       "latitude": -20.945755,
       "longitude": -41.345579
     },
@@ -28,6 +31,7 @@
       "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
       "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
       "video": "videoteste.mp4",
+      "audio": "audio01.mp3",
       "latitude": -20.947902,
       "longitude": -41.340124
     },
@@ -38,6 +42,7 @@
       "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
       "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
       "video": "videoteste.mp4",
+      "audio": "audio01.mp3",
       "latitude": -20.948253,
       "longitude": -41.1340161
     },
@@ -48,6 +53,7 @@
       "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
       "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
       "video": "videoteste.mp4",
+      "audio": "audio01.mp3",
       "latitude": -20.947697,
       "longitude": -41.339687
     },
@@ -58,6 +64,7 @@
       "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
       "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
       "video": "videoteste.mp4",
+      "audio": "audio01.mp3",
       "latitude": -20.802841,
       "longitude": -41.154203
     },
@@ -68,6 +75,7 @@
       "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
       "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
       "video": "videoteste.mp4",
+      "audio": "audio01.mp3",
       "latitude": -20.948016,
       "longitude": -41.339570
     },
@@ -78,6 +86,7 @@
       "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
       "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
       "video": "videoteste.mp4",
+      "audio": "audio01.mp3",
       "latitude": -20.948043,
       "longitude": -41.34073
     },
@@ -88,6 +97,7 @@
       "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
       "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
       "video": "videoteste.mp4",
+      "audio": "audio01.mp3",
       "latitude": -20.948484,
       "longitude": -41.340454
     },
@@ -98,19 +108,22 @@
       "descricao": "Um parque de exposição que tem show e eventos culturais em muqui",
       "imagem": "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
       "video": "videoteste.mp4",
+      "audio": "audio01.mp3",
       "latitude": -20.948629,
       "longitude": -41.340848
     },
     
     {
         "id": 11,
-        "nome": "Biblioteca Antiga e Museu de Antiguidades",
-        "descricao": "Uma biblioteca histórica com um museu de antiguidades.",
+        "nome": "Praça Geraldo Vianna",
+        "descricao": "Praça de Muqui - ES localizada no centro da cidade, área de lazer e onde ocorre festividades do municipio.",
         "imagens": [
-            "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg",
-            "https://raw.githubusercontent.com/theonascimento/Arjs-ImageMaker/main/IMG_20240830_141443.jpg"
+        "/images/praca01.jpg",
+        "/images/praca02.jpg",
+        "/images/praca03.jpg"
         ],
         "video": "videoteste.mp4",
+        "audio": "audio01.mp3",
         "latitude": -14.23500,
         "longitude": -51.92528
     }

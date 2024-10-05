@@ -44,6 +44,11 @@
     margin-top: 10px;
     border-radius: 5px;
 }
+.info-audio {
+    width: 100%; /* Faz o áudio ocupar a largura máxima */
+    margin-top: 10px; /* Adiciona espaçamento acima do áudio */
+    border-radius: 5px; /* Bordas arredondadas */
+}
 
 @media (max-width: 600px) {
     #map {
@@ -67,3 +72,4 @@
         height: auto; /* Ajusta o vídeo para manter a proporção em telas menores */
     }
 }
+
