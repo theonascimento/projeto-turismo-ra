@@ -22,7 +22,7 @@ const App = () => {
                     <Route path="eventos" element={<EventosCulturais />} />
                     <Route path="cadastro-ponto" element={<CadastroPonto />} />
                     <Route path="cadastro-evento" element={<CadastroEvento />} />
-                    <Route path="realidade" element={<RealidadeAumentada />} />
+                    <Route path="interatividade" element={<RealidadeAumentada />} />
                 </Route>
                 <Route path="/login" element={<Login />} />
                 <Route path="/logout" element={<Logout />} />

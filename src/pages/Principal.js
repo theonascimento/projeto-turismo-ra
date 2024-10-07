@@ -33,7 +33,7 @@ const Principal = () => {
                         </Link>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <Link to="/realidade">
+                        <Link to="/interatividade">
                             <img
                                 className="d-block w-100 carousel-image"
                                 src="/images/imagem01.jpg"

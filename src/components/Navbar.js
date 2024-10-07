@@ -24,8 +24,8 @@ const Navbar = () => {
                             <NavLink to="/eventos" className="nav-link">
                                 Eventos
                             </NavLink>
-                            <NavLink to="/realidade" className="nav-link">
-                                Experiência RA
+                            <NavLink to="/interatividade" className="nav-link">
+                                Interatividade
                             </NavLink>
                             <li className="nav-item dropdown">
                                 <NavLink to="#" className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
