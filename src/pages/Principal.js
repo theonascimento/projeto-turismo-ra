@@ -40,7 +40,7 @@ const Principal = () => {
                                 alt="Realidade Aumentada"
                             />
                             <Carousel.Caption>
-                                <h3>Realidade Aumentada</h3>
+                                <h3>Interatividade</h3>
                             </Carousel.Caption>
                         </Link>
                     </Carousel.Item>
@@ -48,7 +48,7 @@ const Principal = () => {
             </div>
             <div className="descricao-site">
                 <p>
-                    O site é voltado para reunir informações turísticas das cidades, como pontos turísticos, hotéis, pousadas, restaurantes, rotas e também eventos culturais. Além disso, conta com um chatbot para servir de guia para sanar alguma dúvida sobre o que se pode encontrar na cidade que está presente. O site ainda oferece auxílio com realidade aumentada para obter informações de lugares que possui marcações que você visita utilizando a câmera do telefone.
+                    O site é voltado para reunir informações turísticas das cidades, como pontos turísticos, hotéis, pousadas, restaurantes, rotas e eventos culturais. Além disso, conta com uma Interatividade utilizando as APIs do Google Cloud, permite que o usuário explore o mapa e obtenha informações detalhadas ao se aproximar e clicar nas marcações de pontos turísticos e eventos próximos à sua localização.
                 </p>
             </div>
         </div>

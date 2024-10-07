@@ -131,7 +131,7 @@ const RealidadeAumentada = () => {
 
     return (
         <div className="realidade-aumentada-container">
-            <h1>Experiência RA</h1>
+            <h1>Interatividade</h1>
             <div id="map" style={{ height: '400px', width: '100%' }}></div>
         </div>
     );
