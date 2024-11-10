@@ -73,7 +73,7 @@ const CadastrarConta = () => {
                             type="text"
                             field="usuario"
                             placeholder="Email"
-                            label="Usuário"
+                            label="Email"
                             onChange={handleChange}
                             value={inputs.usuario}
                             error={errors.usuario}
