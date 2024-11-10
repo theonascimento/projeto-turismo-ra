@@ -1,4 +1,3 @@
-//baseado em https://www.bezkoder.com/react-jwt-auth/
 import axios from "axios";
 
 const API_URL = "http://localhost:8080/api/auth/";
@@ -24,6 +23,20 @@ export const login = async (usuario, senha, lembrar) => {
     return logado;
 };
 
+export const cadastrar = async (nome, usuario, senha) => {
+    try {
+        const response = await axios.post(API_URL + "cadastrar", {
+            nome,
+            usuario,
+            senha
+        });
+        return response.data; // Retorna a resposta da API (sucesso ou erro)
+    } catch (error) {
+        console.error("Erro ao cadastrar:", error);
+        throw error; // Lança erro caso ocorra
+    }
+};
+
 export const logout = () => {
     localStorage.removeItem("user");
 };
@@ -34,18 +47,10 @@ export const getUser = () => {
 
 export const isAuthenticated = () => {
     const user = JSON.parse(localStorage.getItem("user"));
-    if (user && user.accessToken) {
-        return true;
-    } else {
-        return false;
-    }
+    return user && user.accessToken ? true : false;
 };
 
 export const authHeader = () => {
     const user = JSON.parse(localStorage.getItem("user"));
-    if (user && user.accessToken) {
-        return { "x-access-token": user.accessToken };
-    } else {
-        return {};
-    }
+    return user && user.accessToken ? { "x-access-token": user.accessToken } : {};
 };

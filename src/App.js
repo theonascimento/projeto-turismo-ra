@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
+import CadastrarConta from "./pages/CadastrarConta";
 
 const App = () => {
     return (
@@ -23,8 +24,10 @@ const App = () => {
                     <Route path="cadastro-ponto" element={<CadastroPonto />} />
                     <Route path="cadastro-evento" element={<CadastroEvento />} />
                     <Route path="interatividade" element={<RealidadeAumentada />} />
+                    
                 </Route>
                 <Route path="/login" element={<Login />} />
+                <Route path="/cadastrar-conta" element={<CadastrarConta />} />
                 <Route path="/logout" element={<Logout />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>

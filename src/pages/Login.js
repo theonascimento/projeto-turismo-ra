@@ -36,7 +36,10 @@ const Login = () => {
             .validate(inputs, { abortEarly: false })
             .then(async () => {
                 setErrors({});
-                if (await login(inputs.email, inputs.senha, inputs.lembrar)) {
+                // Verifica se o e-mail e a senha são iguais a "email@email.com" e "123456"
+                if (inputs.email === "email@email.com" && inputs.senha === "123456") {
+                    navigate("/"); // Redireciona para a página inicial
+                } else if (await login(inputs.email, inputs.senha, inputs.lembrar)) {
                     navigate("/alunos");
                 } else {
                     setErrors({ email: "Usuário ou senha inválidos." });
@@ -77,6 +80,18 @@ const Login = () => {
                             <button type="submit" className="btn btn-dark btn-lg w-100">
                                 Entrar
                             </button>
+                        </div>
+
+                        {/* Botão de Cadastro */}
+                        <div className="mt-3">
+                            <button type="button" className="btn btn-dark btn-lg w-100" onClick={() => navigate("/cadastrar-conta")}>
+                                Cadastrar
+                            </button>
+                        </div>
+
+                        {/* Link para "Esqueceu a senha?" */}
+                        <div className="mt-3 text-center">
+                            <a href="/esqueci-senha" className="text-decoration-none">Esqueceu a senha?</a>
                         </div>
                     </form>
                 </div>
