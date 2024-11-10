@@ -12,7 +12,7 @@ const Principal = () => {
                         <Link to="/pontos">
                             <img
                                 className="d-block w-100 carousel-image"
-                                src="/images/imagem01.jpg"
+                                src="/images/casarao01.png"
                                 alt="Pontos Turísticos"
                             />
                             <Carousel.Caption>
@@ -24,7 +24,7 @@ const Principal = () => {
                         <Link to="/eventos">
                             <img
                                 className="d-block w-100 carousel-image"
-                                src="/images/imagem01.jpg"
+                                src="/images/carnaval01.png"
                                 alt="Eventos Culturais"
                             />
                             <Carousel.Caption>
@@ -36,7 +36,7 @@ const Principal = () => {
                         <Link to="/interatividade">
                             <img
                                 className="d-block w-100 carousel-image"
-                                src="/images/imagem01.jpg"
+                                src="/images/interatividade.png"
                                 alt="Realidade Aumentada"
                             />
                             <Carousel.Caption>

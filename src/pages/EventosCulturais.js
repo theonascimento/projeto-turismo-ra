@@ -16,36 +16,28 @@ const EventosCulturais = () => {
         {
             id: 1,
             cidade: "Muqui - ES",
-            imagem: "images/imagem01.jpg",
+            imagem: "images/carnaval03.png",
             nome: "Carnaval",
             data: "13 a 15 de fevereiro de 2024",
-            descricao: "O Festival Muquiense do Boi Pintadinho, um dos mais folclóricos do Espírito Santo, começa nesta sexta-feira (13), em Muqui. Este ano, 19 grupos - todos do município - vão participar da festa.\n\nOs integrantes do Boi Xodó, que vão desfilar na madrugada de sábado (14), aguardam ansiosos o início da festa. “Estamos finalizando os preparativos. Esse ano, investimos em uma bateria diferenciada”, declara o presidente do grupo, João Roberto da Silva, o Bieza. Ele explica que a turma é composta por 70 integrantes e participa do evento há 25 anos."
+            descricao: "O Festival Muquiense do Boi Pintadinho, um dos mais folclóricos do Espírito Santo, começa nesta sexta-feira (13), em Muqui. Este ano, 19 grupos - todos do município - vão participar da festa.Os integrantes do Boi Xodó, que vão desfilar na madrugada de sábado (14), aguardam ansiosos o início da festa. “Estamos finalizando os preparativos. Esse ano, investimos em uma bateria diferenciada”, declara o presidente do grupo. Ele explica que a turma é composta por 70 integrantes e participa do evento há 25 anos."
         },
         {
             id: 2,
             cidade: "Muqui - ES",
-            imagem: "images/imagem01.jpg",
-            nome: "Carnaval",
+            imagem: "images/foliadereis.png",
+            nome: "Folia de Reis",
             data: "13 a 15 de fevereiro de 2024",
-            descricao: "O Festival Muquiense do Boi Pintadinho, um dos mais folclóricos do Espírito Santo, começa nesta sexta-feira (13), em Muqui. Este ano, 19 grupos - todos do município - vão participar da festa.\n\nOs integrantes do Boi Xodó, que vão desfilar na madrugada de sábado (14), aguardam ansiosos o início da festa. “Estamos finalizando os preparativos. Esse ano, investimos em uma bateria diferenciada”, declara o presidente do grupo, João Roberto da Silva, o Bieza. Ele explica que a turma é composta por 70 integrantes e participa do evento há 25 anos."
+            descricao: "A principal característica das Folias são as figuras dos Palhaços, com grotescas máscaras, saracoteando à frente dos foliões e, segundo o povo, são os espiões de Herodes"
         },
         {
             id: 3,
-            cidade: "Muqui - ES",
-            imagem: "images/imagem01.jpg",
-            nome: "Carnaval",
-            data: "13 a 15 de fevereiro de 2024",
-            descricao: "O Festival Muquiense do Boi Pintadinho, um dos mais folclóricos do Espírito Santo, começa nesta sexta-feira (13), em Muqui. Este ano, 19 grupos - todos do município - vão participar da festa.\n\nOs integrantes do Boi Xodó, que vão desfilar na madrugada de sábado (14), aguardam ansiosos o início da festa. “Estamos finalizando os preparativos. Esse ano, investimos em uma bateria diferenciada”, declara o presidente do grupo, João Roberto da Silva, o Bieza. Ele explica que a turma é composta por 70 integrantes e participa do evento há 25 anos."
-        },
-        {
-            id: 4,
             cidade: "Cachoeiro de Itapemirim - ES",
-            imagem: "images/imagem01.jpg",
+            imagem: "images/carnaval02.png",
             nome: "Carnaval",
             data: "13 a 15 de fevereiro de 2024",
-            descricao: "O Festival Muquiense do Boi Pintadinho, um dos mais folclóricos do Espírito Santo, começa nesta sexta-feira (13), em Muqui. Este ano, 19 grupos - todos do município - vão participar da festa.\n\nOs integrantes do Boi Xodó, que vão desfilar na madrugada de sábado (14), aguardam ansiosos o início da festa. “Estamos finalizando os preparativos. Esse ano, investimos em uma bateria diferenciada”, declara o presidente do grupo, João Roberto da Silva, o Bieza. Ele explica que a turma é composta por 70 integrantes e participa do evento há 25 anos."
+            descricao: "O Carnaval de Cachoeiro de Itapemirim, no Espírito Santo, é uma festa que se tornou popular e animada ao longo do tempo, com a ajuda de marchinhas carnavalescas."
         }
-        // Adicione mais eventos conforme necessário
+        
     ];
 
     const handleCidadeFiltroChange = (e) => {
