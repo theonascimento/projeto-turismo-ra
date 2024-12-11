@@ -126,7 +126,39 @@
         "audio": "audio01.mp3",
         "latitude": -14.23500,
         "longitude": -51.92528
+    },
+    
+    {
+        "id": 12,
+        "nome": "Praça Geraldo Vianna",
+        "descricao": "Praça de Muqui - ES localizada no centro da cidade, área de lazer e onde ocorre festividades do municipio.",
+        "imagens": [
+        "/images/praca01.jpg",
+        "/images/praca02.jpg",
+        "/images/praca03.jpg"
+        ],
+        "video": "videoteste.mp4",
+        "audio": "audio01.mp3",
+        "latitude": -20.802760,
+        "longitude": -41.154176
+    },
+    
+    {
+        "id": 13,
+        "nome": "Praça Geraldo Vianna",
+        "descricao": "Praça de Muqui - ES localizada no centro da cidade, área de lazer e onde ocorre festividades do municipio.",
+        "imagens": [
+        "/images/praca01.jpg",
+        "/images/praca02.jpg",
+        "/images/praca03.jpg"
+        ],
+        "video": "videoteste.mp4",
+        "audio": "audio01.mp3",
+        "latitude": -20.802641,
+        "longitude": -41.154757
     }
+
+
   
   ]
     
